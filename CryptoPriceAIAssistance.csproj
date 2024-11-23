@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Tests\**" />
+    <Compile Remove="z_buff\**" />
+    <EmbeddedResource Remove="Tests\**" />
+    <EmbeddedResource Remove="z_buff\**" />
+    <None Remove="Tests\**" />
+    <None Remove="z_buff\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="cache.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="cache.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Telegram.Bot" Version="22.1.3" />
+  </ItemGroup>
+
+</Project>
